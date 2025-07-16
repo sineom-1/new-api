@@ -104,11 +104,6 @@ const HeaderBar = () => {
       itemKey: 'console',
       to: '/console',
     },
-    {
-      text: t('定价'),
-      itemKey: 'pricing',
-      to: '/pricing',
-    },
     ...(docsLink
       ? [
         {
@@ -119,11 +114,6 @@ const HeaderBar = () => {
         },
       ]
       : []),
-    {
-      text: t('关于'),
-      itemKey: 'about',
-      to: '/about',
-    },
   ];
 
   async function logout() {

@@ -455,23 +455,7 @@ const Detail = (props) => {
     return { avgRPM, avgTPM, timeDiff };
   }, [times, consumeTokens, end_timestamp, start_timestamp]);
 
-  const getGreeting = useMemo(() => {
-    const hours = new Date().getHours();
-    let greeting = '';
 
-    if (hours >= 5 && hours < 12) {
-      greeting = t('早上好');
-    } else if (hours >= 12 && hours < 14) {
-      greeting = t('中午好');
-    } else if (hours >= 14 && hours < 18) {
-      greeting = t('下午好');
-    } else {
-      greeting = t('晚上好');
-    }
-
-    const username = userState?.user?.username || '';
-    return `👋${greeting}，${username}`;
-  }, [t, userState?.user?.username]);
 
   // ========== Hooks - Callbacks ==========
   const getTrendSpec = useCallback((data, color) => ({
@@ -1105,8 +1089,7 @@ const Detail = (props) => {
 
   return (
     <div className="bg-gray-50 h-full mt-[64px]">
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="text-2xl font-semibold text-gray-800">{getGreeting}</h2>
+      <div className="flex items-center justify-end mb-4">
         <div className="flex gap-3">
           <IconButton
             icon={<IconSearch />}
