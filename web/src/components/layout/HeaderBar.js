@@ -52,7 +52,6 @@ const HeaderBar = () => {
   const isNewYear = currentDate.getMonth() === 0 && currentDate.getDate() === 1;
 
   const isSelfUseMode = statusState?.status?.self_use_mode_enabled || false;
-  const docsLink = statusState?.status?.docs_link || '';
   const isDemoSiteMode = statusState?.status?.demo_site_enabled || false;
 
   const isConsoleRoute = location.pathname.startsWith('/console');
@@ -108,21 +107,6 @@ const HeaderBar = () => {
       text: t('定价'),
       itemKey: 'pricing',
       to: '/pricing',
-    },
-    ...(docsLink
-      ? [
-        {
-          text: t('文档'),
-          itemKey: 'docs',
-          isExternal: true,
-          externalLink: docsLink,
-        },
-      ]
-      : []),
-    {
-      text: t('关于'),
-      itemKey: 'about',
-      to: '/about',
     },
   ];
 
