@@ -19,6 +19,7 @@ import Log from './pages/Log';
 import Chat from './pages/Chat';
 import Chat2Link from './pages/Chat2Link';
 import Midjourney from './pages/Midjourney';
+import Pricing from './pages/Pricing/index.js';
 import Task from './pages/Task/index.js';
 import Playground from './pages/Playground/index.js';
 import OAuth2Callback from './components/auth/OAuth2Callback.js';
@@ -28,6 +29,7 @@ import SetupCheck from './components/layout/SetupCheck.js';
 
 const Home = lazy(() => import('./pages/Home'));
 const Detail = lazy(() => import('./pages/Detail'));
+const About = lazy(() => import('./pages/About'));
 
 function App() {
   const location = useLocation();
@@ -249,6 +251,22 @@ function App() {
                 <Task />
               </Suspense>
             </PrivateRoute>
+          }
+        />
+        <Route
+          path='/pricing'
+          element={
+            <Suspense fallback={<Loading></Loading>} key={location.pathname}>
+              <Pricing />
+            </Suspense>
+          }
+        />
+        <Route
+          path='/about'
+          element={
+            <Suspense fallback={<Loading></Loading>} key={location.pathname}>
+              <About />
+            </Suspense>
           }
         />
         <Route

@@ -23,7 +23,7 @@ import {
   Icon,
   Modal,
 } from '@douyinfe/semi-ui';
-
+import Title from '@douyinfe/semi-ui/lib/es/typography/title';
 import Text from '@douyinfe/semi-ui/lib/es/typography/text';
 import TelegramLoginButton from 'react-telegram-login';
 
@@ -267,9 +267,13 @@ const LoginForm = () => {
         <div className="w-full max-w-md">
           <div className="flex items-center justify-center mb-6 gap-2">
             <img src={logo} alt="Logo" className="h-10 rounded-full" />
+            <Title heading={3} className='!text-gray-800'>{systemName}</Title>
           </div>
 
           <Card className="shadow-xl border-0 !rounded-2xl overflow-hidden">
+            <div className="flex justify-center pt-6 pb-2">
+              <Title heading={3} className="text-gray-800 dark:text-gray-200">{t('登 录')}</Title>
+            </div>
             <div className="px-2 py-8">
               <div className="space-y-3">
                 {status.wechat_login && (
@@ -380,9 +384,13 @@ const LoginForm = () => {
         <div className="w-full max-w-md">
           <div className="flex items-center justify-center mb-6 gap-2">
             <img src={logo} alt="Logo" className="h-10 rounded-full" />
+            <Title heading={3}>{systemName}</Title>
           </div>
 
           <Card className="shadow-xl border-0 !rounded-2xl overflow-hidden">
+            <div className="flex justify-center pt-6 pb-2">
+              <Title heading={3} className="text-gray-800 dark:text-gray-200">{t('登 录')}</Title>
+            </div>
             <div className="px-2 py-8">
               <Form className="space-y-3">
                 <Form.Input
